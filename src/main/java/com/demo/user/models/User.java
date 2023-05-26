@@ -1,22 +1,20 @@
 package com.demo.user.models;
 
-import org.hibernate.annotations.ManyToAny;
-
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
+@Table(name = "users")
 public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(name = "first_name", nullable = false, length = 30, unique = true)
+	@Column(nullable = false, length = 30)
 	private String firstName;
-	@Column(name = "sur_name", nullable = false, length = 30, unique = true)
+	@Column(length = 30)
 	private String surName;
-	@Column(name = "position", nullable = false, length = 30, unique = true)
+	@Column(length = 30)
 	private String position;
-	@Column(name = "github_profile_url", nullable = false, length = 30, unique = true)
+	@Column(length = 30)
 	private String githubProfileUrl;
 
 	public User() {

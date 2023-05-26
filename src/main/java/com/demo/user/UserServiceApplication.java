@@ -31,18 +31,18 @@ public class UserServiceApplication {
 		return modelMapper;
 	}
 
-//	@Bean
-//	public FilterRegistrationBean<CorsFilter> corsFilter(){
-//		FilterRegistrationBean<CorsFilter> registrationBean = new FilterRegistrationBean<>();
-//		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//		CorsConfiguration corsConfiguration = new CorsConfiguration();
-//		corsConfiguration.addAllowedOrigin("*");
-//		corsConfiguration.addAllowedHeader("*");
-//		source.registerCorsConfiguration("/**", corsConfiguration);
-//		registrationBean.setFilter(new CorsFilter(source));
-//		registrationBean.setOrder(0);
-//		return registrationBean;
-//	}
+	@Bean
+	public FilterRegistrationBean<CorsFilter> corsFilter(){
+		FilterRegistrationBean<CorsFilter> registrationBean = new FilterRegistrationBean<>();
+		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+		CorsConfiguration corsConfiguration = new CorsConfiguration();
+		corsConfiguration.addAllowedOrigin("*");
+		corsConfiguration.addAllowedHeader("*");
+		source.registerCorsConfiguration("/**", corsConfiguration);
+		registrationBean.setFilter(new CorsFilter(source));
+		registrationBean.setOrder(0);
+		return registrationBean;
+	}
 
 	@Bean
 	public InternalResourceViewResolver defaultViewResolver() {
@@ -64,7 +64,7 @@ public class UserServiceApplication {
 				"User Service",
 				"1.0",
 				"Free to use",
-				new springfox.documentation.service.Contact("Abdullah", "demo-users.com","abdullahkhan311995@gmail.com"),
+				new springfox.documentation.service.Contact("Abdullah", "localhost:8080","abdullahkhan311995@gmail.com"),
 				"API Licence",
 				"demo-users.com",
 				Collections.emptyList());
